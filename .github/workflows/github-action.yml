@@ -11,10 +11,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Build and tag docker Image
-        run: docker build -t ${{secrets.USERNAME}}uas-pcc-tegar-2024:latest -f Dockerfile .
+        run: docker build -t ${{secrets.USERNAME}}/uas-pcc-tegar-2024:latest -f Dockerfile .
 
       - name: login to Dockerhub
         run: docker login -u ${{secrets.USERNAME}} -p ${{secrets.ACCESS_TOKEN}}
 
       - name: push to docker
-        run: docker push ${{secrets.USERNAME}}uas-pcc-tegar-2024:latest
+        run: docker push ${{secrets.USERNAME}}/uas-pcc-tegar-2024:latest
